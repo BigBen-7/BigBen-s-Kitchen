@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Lobster&family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Source+Sans+Pro:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
+  background-image: linear-gradient(
+      to bottom,
+      hsl(270, 0%, 1%),
+      rgba(52, 49, 49, 0.2)
+    ),
+    url(./images/Lobster\ thermidor.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+/* nav section  */
+.navbar > .nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.navbar > .nav > ul {
+  list-style: none;
+}
+.navbar > .nav > ul li {
+  display: inline-block;
+  margin-right: 2rem;
+  padding: 2rem;
+}
+.navbar > .nav > ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Acme", sans-serif;
+  font-size: 1.25rem;
+  position: relative;
+}
+.navbar > .nav > ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #ed6b5b;
+  transform: scaleY(2);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.navbar > .nav > ul li a:hover::before {
+  transform: scaleY(1.2);
+  opacity: 0;
+}
+.navbar > .nav > ul li a:hover {
+  transform: scale(1);
+  animation-delay: 0.2s;
+  color: #ed6b5b;
+}
+/* HERO SECTION  */
+.skew {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+span {
+  height: 40px;
+  width: 40px;
+  margin-right: -2px;
+  background-color: #000;
+  color: #fda3a5;
+  text-align: center;
+  font-family: "Acme", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  transition-duration: 0.5s;
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+div span:nth-child(odd) {
+  transform: skewY(-17deg);
+  background-color: #fff;
+  color: #000;
+  text-transform: uppercase;
+}
+div span:nth-child(even) {
+  transform: skewY(20deg);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero-text p {
+  text-align: center;
+  font-size: 1.3rem;
+  word-spacing: 2px;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 200;
+}
+
+/* MENU SECTION */
+.menu-heading h1 {
+  text-align: center;
+  letter-spacing: 5px;
+  font-family: "Acme", sans-serif;
+}
+
+.menu-heading > .para {
+  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #ed6b5b;
+  margin-top: 10px;
+}
+.menu h2 {
+  margin-top: 2rem;
+  font-family: "Acme", sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  background-color: #264248;
+  color: #fff;
+  width: 200px;
+  padding: 1rem;
+}
+
+/*FLIP CARDS SECTION */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+.single-card {
+  text-align: center;
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+.wrapper:hover .single-card {
+  transform: rotateY(180deg);
+  animation-fill-mode: none;
+}
+.front,
+.back {
+  width: 300px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+}
+.front img {
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.back {
+  width: 70%;
+  transform: rotateY(180deg);
+  position: absolute;
+  border-radius: 50px;
+  height: 100%;
+  background-color: #264248;
+  z-index: -1;
+}
+.content {
+  padding-top: 50%;
+}
+.content h2 {
+  font-family: "Acme", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 400;
+  color: #ed6b5b;
+  font-weight: bold;
+}
+.content p {
+  color: rgb(28, 185, 28);
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.btn {
+  border: 2px solid #fff;
+  padding: 1rem 1rem;
+  font-size: 15px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  margin-top: auto;
+  transition: 0.6s linear;
+}
+.btn:hover {
+  border: none;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+/* ASIAN FOOD SECTION  */
+.container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto;
+  cursor: pointer;
+}
+.container .asian-food-container {
+  margin: 1rem;
+  background-color: #264248;
+  /* border: 2px solid black; */
+  border-radius: 15px;
+}
+.container .asian-food-container img {
+  width: 480px;
+  border-radius: 15px;
+}
+.container .asian-food-container .name {
+  text-align: center;
+  height: 25px;
+  margin-bottom: 2rem;
+  color: #fff;
+  margin: 0;
+}
+.container .asian-food-container .price {
+  font-size: 1.3em;
+  text-align: center;
+  width: 100%;
+  margin-top: 1.2rem;
+  color: #13bc13;
+  font-weight: 650;
+}
+.container .asian-food-container.img img {
+  width: 198px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+  transition-duration: 1s;
+  cursor: pointer;
+  /* transition: 0.8s ease-in-out; */
+}
+.container .asian-food-container .img :hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+
+  border-radius: 12px;
+}
+
+.btn1 {
+  font-family: "Acme", sans-serif;
+  background-color: #ed6b5b;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 0.8rem;
+  transition: all 0.8s linear;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  cursor: pointer;
+}
+.btn1:hover {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: #000;
+}
+#wine-contain img {
+  width: 280px;
+}
+
+/* SERVICES SECTIN STYLES */
+.services {
+  background-color: #264248;
+  height: 450px;
+  opacity: 0.8;
+}
+
+.services-head {
+  color: #dc853d;
+  text-align: center;
+  /* line-height: 0.5rem; */
+  font-size: 2.5rem;
+  font-family: "Acme", sans-serif;
+}
+.services-head + p {
+  color: #fff;
+  position: relative;
+  top: 3rem;
+  right: 8rem;
+  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3rem;
+  text-align: left;
+}
+.card img {
+  width: 70px;
+}
+.services .card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 2rem;
+  margin-top: 4rem;
+}
+.services .card-grid .card {
+  width: 400px;
+  padding: 3rem 2rem;
+  position: relative;
+  text-align: center;
+  transition: all 0.8s cubic-bezier(0.7, 2.5, 0.3, 1.8);
+}
+.services .card-grid .card img {
+  position: absolute;
+  top: -1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.services .card-grid .card h2 {
+  line-height: 1.5;
+  color: #dc4981;
+}
+.services .card-grid .card:hover {
+  background: #dc853d;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+/* CONTACT-SECTION  */
+.mail-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.input-container {
+  margin: 2rem;
+}
+.input input {
+  width: 300px;
+  height: 50px;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-family: "Dancing Script", cursive;
+  padding: 20px;
+  border: none;
+  background-color: #264248;
+  color: #fff;
+  opacity: 0.95;
+}
+.msg-social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
+}
+.text-msg > input {
+  width: 350px;
+  height: 250px;
+  margin-right: 8rem;
+  outline: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-family: "Dancing Script", cursive;
+  padding: 20px;
+  border: none;
+  background-color: #264248;
+  color: #fff;
+  opacity: 0.95;
+}
+
+footer {
+  background-color: #000;
+  padding: 12px 28px;
+  /* opacity: 0.8; */
+}
+.credit {
+  text-align: center;
+}
+#ben {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #dc853d;
+}
+.mobile {
+  background-color: #264248;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.footer span:nth-child(odd) {
+  transform: skewY(-17deg);
+  background-color: #fff;
+  color: #000;
+  text-transform: uppercase;
+}
+.footer span:nth-child(even) {
+  transform: skewY(20deg);
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ed6b5b;
+}
+.socials {
+  text-align: start;
+  font-size: 1.2rem;
+  background-color: #ed6b5b;
+  border-radius: 5px;
+}
+.socials i {
+  margin: 10px;
+  margin-right: 2rem;
+  color: #000;
+  transition-duration: 0.8s;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+.socials i:hover {
+  transform: translateY(-18px);
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .navbar {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(4, 1fr);
+  }
+  .container .asian-food-container {
+    width: 70%;
+  }
+  .container > .asian-food-container > .img img {
+    width: 100%;
+  }
+  #wine-contain img {
+    width: 100%;
+  }
+  .services {
+    height: fit-content;
+  }
+  .services .card-grid {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, 1fr);
+    /* margin-bottom: 2rem; */
+  }
+  .mail-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile {
+    margin-top: 1rem;
+  }
+  .msg-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .text-msg > input {
+    width: 100%;
+  }
+  .socials {
+    margin: 1rem;
+  }
+  #location {
+    width: 100%;
+  }
+  span {
+    width: 80%;
+  }
+
+  .services-head {
+  }
+  /* .para {
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+  } */
+}
+@media screen and (min-width: 800px);
+ {
+}
